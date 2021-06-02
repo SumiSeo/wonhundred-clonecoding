@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@0;1&display=swap");
 @import "_variables";
 @import "_mixins";
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+@import "_extends";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -20,6 +21,7 @@ body {
   @include navStyle;
   position: fixed;
   top: 0;
+  z-index: 100;
 
   .header__nav--first,
   .header__nav--second {
@@ -40,6 +42,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1.5rem 0rem;
     background-color: white;
+    .header__nav__list:first-child {
+      color: blue;
+    }
   }
 }
 
@@ -64,7 +69,77 @@ body {
     font-weight: 700;
     margin-bottom: 1.4rem;
   }
-  .section__1--nav a {
+  .section__1--link a {
     @include linkInit;
+  }
+}
+
+.section__2 {
+  width: 100%;
+  margin-top: 8rem;
+  height: 45rem;
+
+  .section__wrapper {
+    display: flex;
+    .section__half--title {
+      @extend %bodyHeader;
+    }
+
+    .section__half--1 {
+      width: 100%;
+      height: 45rem;
+      background-image: url("https://images.unsplash.com/photo-1487766036723-04aebf785670?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80");
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      .section__half--1--hover {
+        position: absolute;
+        width: 100%;
+        height: 45rem;
+        top: 0px;
+        left: 0px;
+        transition: all 0.4s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+
+        &:hover {
+          background-color: hsla(0, 0%, 100%, 0.982);
+          opacity: 0.8;
+          .section__half--title {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .section__half--2 {
+      width: 100%;
+      height: 45rem;
+      background-image: url("https://images.unsplash.com/photo-1548080819-84b0d779e8e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80");
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      .section__half--2--hover {
+        position: absolute;
+        width: 100%;
+        height: 45rem;
+        top: 0px;
+        right: 0px;
+        transition: all 0.4s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+
+        &:hover {
+          background-color: hsla(0, 0%, 100%, 0.982);
+          opacity: 0.8;
+          .section__half--title {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
