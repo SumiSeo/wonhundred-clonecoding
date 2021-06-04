@@ -11,7 +11,7 @@
 body {
   font-family: "Raleway", sans-serif;
   width: 100%;
-  height: 1000vh;
+  height: 200vh;
 }
 
 .header {
@@ -232,5 +232,64 @@ body {
     font-size: 1.3rem;
     white-space: nowrap;
     overflow: hidden;
+  }
+}
+
+.footer {
+  width: 100%;
+  margin-top: 8rem;
+  height: 10rem;
+
+  .footer__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+    gap: 10px;
+
+    .footer__box {
+      padding: 2rem 4rem;
+      width: 100%;
+      .footer__newsletter--title {
+        @include footerTitle;
+      }
+      .footer__newsletter--info {
+        margin-top: 2rem;
+        .footer__form {
+          .footer__input {
+            @include footerInput;
+            margin-right: 1rem;
+          }
+          .footer__btn {
+            @include footerBtn;
+            @include footerTitle;
+          }
+        }
+      }
+
+      .footer__newsletter {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.footer__box--2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .footer__details__box {
+    display: flex;
+    flex-direction: column;
+    .footer__details--title {
+      margin-bottom: 2rem;
+      @include footerTitle;
+    }
+    .footer__details--info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      grid-template-rows: repeat(2, 1rem);
+      @include detailText;
+    }
   }
 }

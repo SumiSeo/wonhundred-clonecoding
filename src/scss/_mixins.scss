@@ -15,3 +15,32 @@
   color: white;
   font-size: 1rem;
 }
+
+@mixin footerTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@mixin footerText {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+@mixin footerInput {
+  padding: 0.7rem 1rem;
+  padding-right: 8rem;
+  background-color: white;
+  outline: none;
+  border: 1px solid black;
+}
+
+@mixin footerBtn {
+  padding: 0.7rem 0.7rem;
+  background-color: #f0f3f4;
+  outline: none;
+  border: none;
+}
+
+@mixin detailText {
+  font-size: 0.8rem;
+}
