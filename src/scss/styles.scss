@@ -18,18 +18,33 @@ body {
 }
 
 .header {
-  height: 40vh;
+  height: 14rem;
   width: 100%;
+  margin-top: 2rem;
   padding-top: 2.4rem;
   @include navStyle;
-  position: fixed;
-  top: 0;
-  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  .header__nav--first,
-  .header__nav--second {
-    padding: 0rem 7rem;
+  .sticky {
+    width: 90%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
   }
+  .header__nav--first {
+    width: 90%;
+    background-color: white;
+    padding: 1rem 2rem;
+  }
+  .header__nav--second {
+    width: 90%;
+    background-color: white;
+    padding: 1rem 2rem;
+  }
+
   .header__nav__first--lists {
     display: grid;
     grid-template-columns: 2fr 4fr 1fr 1fr;
@@ -41,19 +56,22 @@ body {
   }
 
   .header__nav__second--lists {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     padding: 1.5rem 0rem;
     background-color: white;
     .header__nav__list:first-child {
       color: blue;
     }
   }
+  .header__nav__list {
+    transition: all 0.4s;
+  }
 }
 
 .section__1 {
   width: 100%;
-  margin-top: 18rem;
+  margin-top: 5rem;
   background-color: red;
   height: 60rem;
   @include sectionStyle;
@@ -71,6 +89,10 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1.4rem;
+  }
+  .section__1__links {
+    display: flex;
+    justify-content: space-around;
   }
   .section__1--link a {
     @include linkInit;
@@ -164,7 +186,7 @@ body {
     margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40rem 8rem;
+    grid-template-rows: 60rem 8rem;
     .grid__box:first-child {
       background-image: url("https://images.unsplash.com/photo-1524230572899-a752b3835840?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80");
       background-position: center;
@@ -195,7 +217,7 @@ body {
 
 .section__4 {
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 26rem;
   height: 4rem;
   display: flex;
   justify-content: center;
@@ -265,6 +287,7 @@ body {
           .footer__btn {
             @include footerBtn;
             @include footerTitle;
+            margin-right: 1rem;
           }
         }
       }
