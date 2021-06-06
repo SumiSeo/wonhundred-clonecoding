@@ -48,6 +48,7 @@ const stickyFunction =function(entries,observer){
 const headerObserver = new IntersectionObserver(stickyFunction, {
     root:null,
     threshold:0,
+
 });
 
 headerObserver.observe(navFirst);
